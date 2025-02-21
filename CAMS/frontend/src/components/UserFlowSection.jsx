@@ -7,7 +7,7 @@ function UserFlowSection() {
   return (
     <Box sx={{ p: 4, backgroundColor: '#f9f9f9' }}>
       <Typography variant="h4" color="primary.main" gutterBottom align="center">
-        How Mentor-Connect Works
+        How CampusConnect Works
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {/* Step 1: Post a Job */}

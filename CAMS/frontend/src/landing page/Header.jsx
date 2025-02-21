@@ -5,19 +5,31 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <header className="header bg-dark text-white py-3">
+    <header className="header bg-dark text-white py-4 shadow">
       <div className="container d-flex justify-content-between align-items-center flex-wrap">
         <div className="d-flex align-items-center">
           {/* <img src="https://i.imgur.com/bqAB7QJ.png" alt="Logo" className="logo" /> */}
-          <h1 className="m-0">Mentor Connect</h1>
+          <h2 className="m-0 fw-bold">
+            <span className="text-primary">Campus</span>Connect
+          </h2>
         </div>
         <nav className="mt-3 mt-md-0">
-          <ul className="nav flex-column flex-md-row">
+          <ul className="nav flex-column flex-md-row gap-2">
             <li className="nav-item">
-              <Link className="btn btn-outline-light mx-2 my-1 my-md-0" to="/login">Login</Link>
+              <Link 
+                className="btn btn-outline-light px-4 fw-semibold hover-scale me-5" 
+                to="/login"
+              >
+                Login
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="btn btn-outline-light mx-2 my-1 my-md-0" to="/admin/login">Admin</Link>
+              <Link 
+                className="btn btn-outline-light px-4 fw-semibold hover-scale" 
+                to="/admin/login"
+              >
+                Admin
+              </Link>
             </li>
           </ul>
         </nav>

@@ -56,41 +56,18 @@ const MiniLayout = ({ children }) => {
 
       <Slide appear={false} direction="down" in={show}>
         <AppBar position="fixed" sx={{ backgroundColor: '#212529', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-          <Toolbar>
-            <Typography
-              component="div"
-              sx={{ 
-                fontFamily: 'Poppins, sans-serif', 
-                fontSize: '1.8rem', 
-                flex: 1, 
-                textAlign: 'center', 
-                color: 'white',
-                cursor: 'pointer' }}
-              onClick={() => navigate('/')}
-            >
-              MentorConnect
-            </Typography>
+          <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            {/* Updated Logo Section */}
+            <div className="d-flex align-items-center">
+              <h3 className="m-0 fw-bold" style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+                <span className="text-primary">Campus</span>Connect
+              </h3>
+            </div>
+
+            {/* User Info and Logout */}
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ 
-                  fontFamily: 'Poppins, sans-serif', 
-                  fontSize: '1.2rem', 
-                  color: 'white', 
-                  textAlign: 'right' 
-                }}
-              >
-                Welcome, {name}
-                <Typography
-                  variant="body2"
-                  component="span"
-                  sx={{ marginLeft: 1, fontSize: '0.8rem', color: 'white' }}
-                >
-                  ({userRole})
-                </Typography>
-              </Typography>
-              <IconButton color="inherit" onClick={handleLogout} sx={{ ml: 2 }}>
+                            <IconButton color="inherit" onClick={handleLogout} sx={{ ml: 2 }}>
+                              Logout  
                 <ExitToApp />
               </IconButton>
             </Box>
@@ -129,7 +106,7 @@ const MiniLayout = ({ children }) => {
           align="center"
           sx={{ color: 'white' }}
         >
-          &copy; {new Date().getFullYear()} MentorConnect. All rights reserved.
+          &copy; {new Date().getFullYear()} CampusConnect. All rights reserved.
         </Typography>
       </Box>
     </Box>

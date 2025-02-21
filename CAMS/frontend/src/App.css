@@ -41,23 +41,15 @@
   color: #888;
 } */
 .login-background {
-  background-image: url('https://images.shiksha.com/mediadata/images/1695813984phpzgd6M3.jpeg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
 }
 
 .login-container {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 400px;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 800px;
 }
 
 .logo {
@@ -68,5 +60,27 @@
 
 .text-white {
   color: white;
+}
+
+.hover-underline:hover {
+  text-decoration: underline !important;
+}
+
+.form-control-lg {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-control-lg:focus {
+  background-color: white;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.form-select {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-select:focus {
+  background-color: white;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 

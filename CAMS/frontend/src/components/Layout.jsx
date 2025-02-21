@@ -73,7 +73,9 @@ const Layout = ({ children }) => {
     <Box sx={{ width: '250px', backgroundColor: '#212529', color: 'white', height: '100%' }}>
       <Box sx={{ padding: '20px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
         <SchoolIcon sx={{ color: 'white', fontSize: '2rem' }} />
-        <Typography variant="h6" sx={{ color: 'white', fontWeight: 'bold' }}>MentorConnect</Typography>
+        <Typography variant="h6" sx={{ color: 'white', fontWeight: 'bold' }}><h4 className="m-0 fw-bold">
+            <span className="text-primary">Campus</span>Connect
+          </h4></Typography>
       </Box>
       <List>
         {userRole === 'mentor' ? (
@@ -280,12 +282,12 @@ const Layout = ({ children }) => {
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
           <PersonIcon sx={{ color: 'white', fontSize: '2.6rem', marginRight: '5px', marginTop: '2.5px' }} /> {/* User icon */}
           <Box>
+
+            <h1>
             <Typography variant="body1" sx={{ color: 'white', fontSize: '1.2rem' }}>
               {name}
             </Typography>
-            <Typography variant="body2" sx={{ color: '#fff', fontSize: '0.7rem' }}>
-              {userRole}
-            </Typography>
+            </h1  >
           </Box>
         </Box>
         {/* <Button
@@ -323,12 +325,11 @@ const Layout = ({ children }) => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              MentorConnect
+            <h3 className="m-0 fw-bold">
+            <span className="text-primary">Campus</span>Connect
+          </h3>
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Typography variant="body1" sx={{ color: 'white', fontSize: '1rem', marginRight: '20px' }}>
-                {name} ({userRole})
-              </Typography>
               <Button
                 onClick={handleLogout}
                 sx={{

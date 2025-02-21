@@ -76,9 +76,9 @@ const Academics = () => {
         <div className="card mb-4 shadow-sm">
           <div className="card-body">
             <h2 className="card-title">Academic Details</h2>
-            <h4 className="card-subtitle mb-2 text-muted">
-              Mentee: {academicDetails[0].studentName}
-            </h4>
+            <h3 className="card-subtitle mb-2 text-muted">
+              {academicDetails[0].studentName}
+            </h3>
             <h5 className="card-subtitle mb-4 text-muted">CGPA: {academicDetails[0].CGPA}</h5>
 
             <div className="mb-4">
