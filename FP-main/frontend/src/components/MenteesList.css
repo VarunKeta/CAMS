@@ -1,0 +1,36 @@
+/* MenteesList.css */
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.mentee-card {
+  cursor: default; /* Remove cursor pointer to avoid confusion */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure cards use full width of the column */
+}
+
+.mentee-card:hover {
+  transform: none; /* Remove hover transform effect */
+}
+
+.mentee-card-img {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button {
+  border-radius: 8px;
+}
