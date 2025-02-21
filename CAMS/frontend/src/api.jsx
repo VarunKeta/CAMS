@@ -225,6 +225,28 @@ export const updatePermissionStatus = async (id, status) => {
   }
 };
 
+// Fetch QR code for an accepted permission
+export const getQRCode = async (id) => {
+  try {
+    const response = await api.get(`/permissions/generate-qr/${id}`);
+    return response.data.qrCode;
+  } catch (error) {
+    console.error('Error fetching QR code:', error);
+    throw error;
+  }
+};
+
+// Scan QR Code (Dummy function for now)
+export const scanQRCode = async (qrData) => {
+  try {
+    console.log('Scanned QR Code:', qrData);
+    return true;
+  } catch (error) {
+    console.error('Error scanning QR code:', error);
+    throw error;
+  }
+};
+
 export const getMeetingsByMentee = async (menteeId) => {
   try {
     const response = await api.get(`/meetings/${menteeId}`);
