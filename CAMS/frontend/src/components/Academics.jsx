@@ -66,7 +66,7 @@ const Academics = () => {
     );
   }
 
-  const selectedResult = academicDetails[0].results.find(
+  const selectedResult = academicDetails[0].result.find(
     (result) => result.semester.toString() === selectedSemester
   );
 
