@@ -31,6 +31,7 @@ import {
   AssignmentTurnedIn as AssignmentTurnedInIcon,
   Person as PersonIcon, // User icon
   Menu as MenuIcon,
+  MonetizationOn as MonetizationOnIcon,
 } from '@mui/icons-material';
 
 function HideOnScroll(props) {
@@ -241,6 +242,22 @@ const Layout = ({ children }) => {
         >
           <EventIcon sx={{ mr: 2 }} />
           <ListItemText primary="Meeting Schedules" sx={{ fontSize: '16px' }} />
+        </ListItem>
+        <ListItem
+          button
+          component={Link}
+          to={`/mentee/${menteeId}/ecoins`}
+          sx={{
+            color: 'white',
+            mb: 2,
+            transition: 'transform 0.2s',
+            '&:hover': {
+              transform: 'scale(0.9)',
+            },
+          }}
+        >
+          <MonetizationOnIcon sx={{ mr: 2 }} />
+          <ListItemText primary="E-Coins" sx={{ fontSize: '16px' }} />
         </ListItem>
         <ListItem
           button

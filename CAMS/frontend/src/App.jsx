@@ -22,6 +22,7 @@ import Attendance from './components/Attendance';
 import MentorRemarks from './components/MentorRemarks';
 import Permissions from './components/Permissions';
 import Meetings from './components/Meetings';
+import ECoins from './components/ECoins';
 
 function App() {
   // Check if the user is authenticated (e.g., by checking cookies or the authentication state)
@@ -100,6 +101,8 @@ console.log(authenticated)
         <Route path="/permissions/:id" element={<Permissions />} />
         <Route path="/meetings/:id" element={<Meetings />} />
         <Route path="/changepassword" element={<ChangePassword />} />
+
+        <Route path="/mentee/:id/ecoins" element={<ECoins />} />
 
 
 

@@ -6,7 +6,7 @@ import { fetchMentorById } from '../api';
 import { useAuth } from '../AuthContext';
 import profilebanner from '../assets/profilebanner.png'
 
-const years = [2020, 2021, 2022, 2023];
+const years = [2020, 2021, 2022, 2023, 2024];
 
 const MentorDashboard = () => {
   const { userId } = useAuth();
@@ -58,72 +58,141 @@ const MentorDashboard = () => {
   return (
     <MiniLayout>
       <Container>
-        <Card style={{
-          marginBottom: '20px',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-          position: 'relative'
-        }}>
-          <div style={{ position: 'relative', marginBottom: '1rem' }}>
+        <Card 
+          elevation={0}
+          style={{
+            marginBottom: '2rem',
+            borderRadius: '15px',
+            boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.08)',
+            position: 'relative',
+            background: 'linear-gradient(to right, #ffffff, #f8f9fa)',
+            border: '1px solid #eaeaea'
+          }}
+        >
+          <div style={{ position: 'relative', marginBottom: '2rem' }}>
             <img
-              src={profilebanner} // Replace this with the actual banner image URL
+              src={profilebanner}
               alt="Profile Banner"
-              style={{ width: '100%', height: '23vh', borderTopLeftRadius: '4px', borderTopRightRadius: '4px' }}
+              style={{ 
+                width: '100%', 
+                height: '25vh', 
+                borderTopLeftRadius: '15px', 
+                borderTopRightRadius: '15px',
+                objectFit: 'cover'
+              }}
             />
             <div
               style={{
                 position: 'absolute',
-                top: '10vh',
+                top: '12vh',
                 right: '3rem',
                 border: '5px solid white',
                 borderRadius: '50%',
                 padding: '5px',
                 backgroundColor: 'white',
+                boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)'
+                }
               }}
             >
               <img
                 src={mentor.photoLink}
                 alt={mentor.name}
-                style={{ width: '9rem', height: '9rem', borderRadius: '50%', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
+                style={{ 
+                  width: '10rem', 
+                  height: '10rem', 
+                  borderRadius: '50%', 
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                  objectFit: 'cover'
+                }}
               />
             </div>
           </div>
-          <CardContent style={{padding: '20px'}}>
-            <Typography variant="h4" component="div" gutterBottom>
+          <CardContent style={{padding: '2rem'}}>
+            <Typography 
+              variant="h3" 
+              component="div" 
+              gutterBottom
+              style={{
+                fontWeight: '600',
+                background: 'linear-gradient(45deg, #2196F3, #21CBF3)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               Welcome! {mentor.name}
             </Typography>
-            <Typography variant="body1" component="div">
-              <strong>Registration Number:</strong> {mentor.registrationNumber}
-            </Typography>
-            <Typography variant="body1" component="div">
-              <strong>Year:</strong> {mentor.year}
-            </Typography>
-            <Typography variant="body1" component="div">
-              <strong>Email:</strong> {mentor.email}
-            </Typography>
-            <Typography variant="body1" component="div">
-              <strong>Role:</strong> {mentor.role}
-            </Typography>
+            <Grid container spacing={3} style={{marginTop: '1rem'}}>
+              <Grid item xs={12} md={6}>
+                <Typography variant="body1" component="div" style={{margin: '0.5rem 0'}}>
+                  <strong style={{color: '#666'}}>Registration Number:</strong> 
+                  <span style={{marginLeft: '0.5rem'}}>{mentor.registrationNumber}</span>
+                </Typography>
+                <Typography variant="body1" component="div" style={{margin: '0.5rem 0'}}>
+                  <strong style={{color: '#666'}}>Year:</strong> 
+                  <span style={{marginLeft: '0.5rem'}}>{mentor.year}</span>
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Typography variant="body1" component="div" style={{margin: '0.5rem 0'}}>
+                  <strong style={{color: '#666'}}>Email:</strong> 
+                  <span style={{marginLeft: '0.5rem'}}>{mentor.email}</span>
+                </Typography>
+                <Typography variant="body1" component="div" style={{margin: '0.5rem 0'}}>
+                  <strong style={{color: '#666'}}>Role:</strong> 
+                  <span style={{marginLeft: '0.5rem', textTransform: 'capitalize'}}>{mentor.role}</span>
+                </Typography>
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
 
-        <Grid container spacing={3} style={{ marginTop: '20px' }}>
+        <Typography 
+          variant="h5" 
+          style={{
+            marginBottom: '1.5rem',
+            color: '#444',
+            fontWeight: '500'
+          }}
+        >
+          Select Academic Year
+        </Typography>
+
+        <Grid container spacing={3}>
           {years.map((year) => (
-            <Grid item xs={12} md={6} lg={3} key={year}>
+            <Grid item xs={12} sm={6} md={3} key={year}>
               <Card
                 onClick={() => handleYearClick(year)}
                 style={{
-                  
-                  borderRadius: '0.5rem',
-                  boxShadow: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+                  borderRadius: '12px',
                   cursor: 'pointer',
-                  transition: 'transform 0.3s ease-in-out',
-                  textAlign: 'center',
-                  padding: '0.5rem'
+                  transition: 'all 0.3s ease',
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%)',
+                  border: '1px solid #eaeaea',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
+                  }
                 }}
+                elevation={0}
               >
                 <CardContent>
-                  <Typography variant="h5" component="div">
+                  <Typography 
+                    variant="h4" 
+                    component="div"
+                    style={{
+                      fontWeight: '600',
+                      color: '#2196F3',
+                      textAlign: 'center',
+                      padding: '1.5rem'
+                    }}
+                  >
                     {year}
                   </Typography>
                 </CardContent>
