@@ -309,6 +309,23 @@ export const getAllActivities = async (menteeId) => {
 };
 
 
+// Wallet API Functions
+export const getWalletDetails = async (userId) => {
+  const response = await api.get(`/wallet/${userId}`);
+  return response.data;
+};
+
+export const createRazorpayOrder = async (amount) => {
+  const response = await api.post('/wallet/create-order', { amount });
+  return response.data;
+};
+
+export const verifyPayment = async (paymentData) => {
+  const response = await api.post('/wallet/verify-payment', paymentData);
+  return response.data;
+};
+
+
 //END NEW ROUTES
 export const signup = async ({ email, password, name, role, bio, skills, portfolio, projects, bids }) => {
   try {

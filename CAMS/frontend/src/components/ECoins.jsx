@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from './Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getWalletDetails, createRazorpayOrder, verifyPayment } from '../api/wallet';
+import { getWalletDetails, createRazorpayOrder, verifyPayment } from '../api';
+
 
 const ECoins = () => {
   const [balance, setBalance] = useState(0);
